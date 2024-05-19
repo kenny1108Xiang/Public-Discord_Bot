@@ -1,5 +1,6 @@
 # Discord-Bot1
-#此公開檔案為方便展示，所以未把私人群組之文字頻道id、機器人token與ffmpeg檔案上傳
+# 此公開檔案為方便展示
+# 所以未把私人群組之文字頻道id、機器人token與ffmpeg檔案上傳
 
 Python
 
