@@ -2,5 +2,6 @@
     "Token": "Token",
     "bot-message": "",
     "join": "",
-    "leave": ""
+    "leave": "",
+    "Weather_Token": "Api_Token"
 }
