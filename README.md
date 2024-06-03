@@ -21,7 +21,7 @@ ver1.0 -- 可以創建每個新加入伺服器個別的json設定檔，且可以
 
 ver1.1 -- 修改為，可把INFO print在terminal上
 
-ver1.2 -- 增新天氣查詢api
+ver1.2 -- 增新天氣查詢api，
 政府api網址：https://opendata.cwa.gov.tw/dataset/all/F-C0032-001
 
 
