@@ -8,9 +8,8 @@ Python
 這是一個Discord機器人，目前僅限於個人使用
 
 
-目前使用在:  https://discord.gg/HdbVbj5KeA
-            https://discord.gg/58mzpwV8gR 
-            https://discord.gg/U4Yrr6ABmu
+目前公開使用在: https://discord.gg/U4Yrr6ABmu
+，若各位教授有興趣，可以進入此server使用機器人功能
 
 
 目前遇到問題：音樂無法完整播完。
