@@ -1,11 +1,13 @@
 from discord.ext import commands
 import requests
 import json
+from datetime import datetime
+
 
 with open("setting.json", mode='r', encoding="utf8") as jsetting:
     setting = json.load(jsetting)
 
-url = f"https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization={setting['Weather_Token']}"
+weather_url = f"https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization={setting['Weather_Token']}"
 
 class Weather(commands.Cog):
 
@@ -14,10 +16,10 @@ class Weather(commands.Cog):
 
     @commands.command()
     async def weather(self, ctx, city: str):
-        data = requests.get(url)
+        data = requests.get(weather_url)
 
         if data.status_code != 200:
-            await ctx.send("目前查詢失敗")
+            await ctx.send("目前獲取失敗")
             return
 
         data_json = data.json()
@@ -47,7 +49,11 @@ class Weather(commands.Cog):
 
         weather_info = f"{city}的天氣預報：\n\n"
         for period, elements in periods.items():
-            weather_info += f"時間段: {period}\n"
+            formatted_period = " - ".join([
+                datetime.strptime(time, "%Y-%m-%d %H:%M:%S").strftime("%Y/%m/%d %H:%M") 
+                for time in period.split(" - ")
+            ])
+            weather_info += f"時間段: {formatted_period}\n"
             if 'Wx' in elements:
                 weather_info += f"  天氣: {elements['Wx']}\n"
             if 'PoP' in elements:
@@ -61,8 +67,6 @@ class Weather(commands.Cog):
             weather_info += "\n"
 
         await ctx.send(weather_info)
-
-
 
 async def setup(bot):
     await bot.add_cog(Weather(bot))
