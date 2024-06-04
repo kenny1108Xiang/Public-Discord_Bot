@@ -1,11 +1,5 @@
-# Discord-Bot1
-# 此公開檔案為方便展示
-
-
-所以未把私人群組之文字頻道id、機器人相關token與ffmpeg檔案上傳
-
-
-這是一個Discord機器人，目前僅限於個人使用
+# Discord-Bot1 這是一個Discord機器人，目前僅限於個人使用
+# 此公開檔案為方便展示，所以未把私人群組之文字頻道id、機器人相關token與ffmpeg檔案上傳
 
 
 目前公開使用在: https://discord.gg/U4Yrr6ABmu
