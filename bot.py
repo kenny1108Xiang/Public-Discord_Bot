@@ -13,7 +13,7 @@ intents.members = True
 bot = commands.Bot(command_prefix='%', intents=intents)
 
 async def setup_bot():
-    initial_extensions = ['cmds.main', 'cmds.event', 'cmds.music']
+    initial_extensions = ['cmds.main', 'cmds.event', 'cmds.music', 'cmds.weather', 'cmds.AirQuality']
     for extension in initial_extensions:
         try:
             await bot.load_extension(extension)
@@ -23,11 +23,12 @@ async def setup_bot():
 @bot.event
 async def on_message(message):
     if message.content.startswith(bot.command_prefix):
-        return  # 這是命令、交由 commands 模組處理
+        return  # 這是命令，交由 commands 模組處理
 
 @bot.event
 async def on_ready():
     await bot.wait_until_ready()
+    await bot.change_presence(activity=discord.Game(name="Python😀"))
 
     channel_id = setting["bot-message"]
     channel = bot.get_channel(channel_id)
