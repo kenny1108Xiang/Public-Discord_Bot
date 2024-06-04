@@ -18,10 +18,10 @@ class Event(commands.Cog):
         if message.author == self.bot.user:
             return
         if message.content == "Hello Bot":
-            await message.reply("Hello")
-        if isinstance(message.channel, discord.DMChannel):
-        # 回應私人訊息
-            await message.author.send("您好！這是我的私人回覆。")
+            if isinstance(message.channel, discord.DMChannel):
+                await message.author.send("您好，這是我的私人訊息")
+            else:
+                await message.reply("Hello")
         await self.bot.process_commands(message)
         
 
