@@ -24,4 +24,7 @@ ver1.1 -- 修改為，可把INFO print在terminal上
 ver1.2 -- 增新天氣查詢api，
 政府api網址：https://opendata.cwa.gov.tw/dataset/all/F-C0032-001
 
+ver1.3 -- 增新空氣品質查詢api，
+政府api網址：https://data.gov.tw/dataset/40448
+
 
